@@ -12,15 +12,6 @@ var should = chai.should();
 chai.use(chaiHttp);
 
 describe('Pokemons', function () {
-	
-	// beforeEach(function (done) {
-	// 	Pokemon.destroy({
-	// 		where: {},
-	// 		//truncate: true
-	// 	}).then(function (err) {
-	// 		done();
-	// 	});
-	// });
 
 	/**
 	 * Test the /POST route
