@@ -1,8 +1,9 @@
 # Teste - Pokemon API
-
+##Node.js + Sequelize + Express + sqlite3 / mysql
 Este Projeto foi desenvolvido como parte de um teste para vaga na empresa [Pagar.me](https://pagar.me/).
 O teste foi desenvolvido em node.js v7.9.x (última versão de produção disponível no momento do teste).
-Foi usado o ES5 para implementação do código em javascript.
+
+Foi usado o ES5 para implementação do código em javascript, o ORM Sequelize com conexão com SQlite3 e Mysql, além do framework Express.js para criação das rotas.
  
 ## Iniciando servidor
 Após clonar o repositório, navegue até a pasta do projeto e execute o comando: ` npm install ` para baixar e instalar as dependências do projeto.
