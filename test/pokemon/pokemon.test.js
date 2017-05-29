@@ -62,9 +62,16 @@ describe('Pokemons', function () {
 	/**
 	 * Test the /POST route
 	 */
-	describe('/PUT Update pokemons', function () {
+	describe('/PUT Buy pokemons', function () {
 		it('it should Update  pokemons', function (done) {
-			var pokemon = { 	"name": "pikachu", 	"quantity": 1 }
+			var pokemon = {
+				"name": "Pikachu",
+				"quantity": 1,
+				"card_number": "4024007138010896",
+				"card_holder_name": "Ash Ketchum",
+				"card_expiration_date": "1050",
+				"card_cvv": "123"
+			}
 
 			chai.request(server)
 				.put('/buy-pokemons')
