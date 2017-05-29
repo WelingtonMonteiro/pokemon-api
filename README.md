@@ -1,5 +1,6 @@
 # Teste - Pokemon API
-##Node.js + Sequelize + Express + sqlite3 / mysql
+### Node.js + Sequelize + Express + sqlite3 / mysql
+
 Este Projeto foi desenvolvido como parte de um teste para vaga na empresa [Pagar.me](https://pagar.me/).
 O teste foi desenvolvido em node.js v7.9.x (última versão de produção disponível no momento do teste).
 
