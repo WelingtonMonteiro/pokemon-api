@@ -38,7 +38,7 @@ Api que retorna os pokemons cadastrados.
     }
 ```
 
-### `/get-pokemons` GET 
+### `/buy-pokemons` PUT 
 Api onde é feita a compra de pokemons.
 
 ```json
