@@ -1,0 +1,40 @@
+{
+	"name": "pokemon",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Example of a really bad code",
+	"main": "index.js",
+	"scripts": {		
+		"start": "node app.js",
+		"doc": "apidoc -f \".*\\.doc\\.js\" -o public",
+		"test": "mocha --timeout 10000"
+	},
+	"author": "Welington Monteiro",
+	"apidoc": {
+		"name": "Documentação - Pokemons API"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "~1.16.0",
+		"compression": "^1.6.2",
+		"express": "~4.14.1",
+		"forever-monitor": "^1.7.1",
+		"helmet": "~3.6.1",
+		"morgan": "~1.7.0",
+		"request": "~2.81.0",
+		"request-promise": "~4.2.1",
+		"sequelize": "~3.30.4",
+		"sqlite3": "~3.1.8",
+		"winston": "^2.3.1"
+	},
+	"devDependencies": {
+		"api-doc": "*",
+		"chai": "*",
+		"chai-http": "*",
+		"mocha": "*"
+	},
+	"engines": {
+		"node": "~7.9.x",
+		"npm": "~4.6.x"
+	}
+}
