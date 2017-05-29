@@ -9,14 +9,14 @@ module.exports = {
 function envDev(){
 	return {
 		database: "pokemons-dev",
-		username: "entendeu",
-		password: "entendeu",
+		username: "",
+		password: "",
 		params: {
 			host: "127.0.0.1",
-			// dialect: "sqlite",
-			dialect: "mysql",
+			dialect: "sqlite",
+			// dialect: "mysql",
 			port: 3306,
-			// storage: "../pokemons-dev.sqlite",
+			storage: "../pokemons-dev.sqlite",
 			pool: {
 				max: 5,
 				min: 0,
@@ -37,14 +37,14 @@ function envDev(){
 function envProd(){
 	return {
 		database: "pokemons",
-		username: "entendeu",
-		password: "entendeu",
+		username: "",
+		password: "",
 		params: {
 			host: "127.0.0.1",
-			// dialect: "sqlite",
-			dialect: "mysql",
+			dialect: "sqlite",
+			// dialect: "mysql",
 			port: 3306,
-			// storage: "../pokemons.sqlite",
+			storage: "../pokemons.sqlite",
 			pool: {
 				max: 5,
 				min: 0,
@@ -65,14 +65,14 @@ function envProd(){
 function envTest(){
 	return {
 		database: "pokemons-test",
-		username: "entendeu",
-		password: "entendeu",
+		username: "",
+		password: "",
 		params: {
 			host: "127.0.0.1",
-			// dialect: "sqlite",
-			dialect: "mysql",
+			dialect: "sqlite",
+			// dialect: "mysql",
 			port: 3306,
-			// storage: "../pokemons-test.sqlite",
+			storage: "../pokemons-test.sqlite",
 			pool: {
 				max: 5,
 				min: 0,
