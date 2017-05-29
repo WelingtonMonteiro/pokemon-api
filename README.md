@@ -1,6 +1,6 @@
 # Teste - Pokemon API
 
-Este Projeto foi desenvolvido como parte de um teste para vaga na empresa [Pagar.me](pagar.me).
+Este Projeto foi desenvolvido como parte de um teste para vaga na empresa [Pagar.me](https://pagar.me/).
 O teste foi desenvolvido em node.js v7.9.x (última versão de produção disponível no momento do teste).
 Foi usado o ES5 para implementação do código em javascript.
  
