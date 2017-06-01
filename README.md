@@ -13,8 +13,8 @@ Em seguida, inicie o servidor executando com comando: `npm start`.  O servidor i
 
 ## APIS
 Foram criadas 3 apis.
-Foi usado também um gerador de api, no caso usei um modo basico, mas poderia ter evoluído a doc da api a ponto de disponibilzar um teste restfull por ela.
-Gerador de api usado foi o [Apidoc](http://apidocjs.com/), para atualizar a doc da api basta executar o comando: ` npm doc `, 
+Foi usado também um gerador de documentaçao da api, no caso usei um modo basico, mas poderia ter evoluído a doc da api a ponto de disponibilzar um teste restfull por ela.
+Gerador de documentação da api usado foi o [Apidoc](http://apidocjs.com/), para atualizar a doc da api basta executar o comando: ` npm doc `, 
 toda a documentação referente a api será gerada na pasta ` public `, e disponibilizado na rota `/` ao executar o servidor.
 
 ###	`/create-pokemon` POST 
