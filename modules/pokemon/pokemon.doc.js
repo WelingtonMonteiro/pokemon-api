@@ -4,21 +4,21 @@
 
 
 /**
- * @api {GET} /get-pokemons Get All Pokemons
+ * @api {GET} /pokemons Get All Pokemons
  * @apiGroup Pokemon
  * @apiversion 1.0.0
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- * {
+ * [{
  *	"id": "1",
  *	"name": "pikachu",
  *	"price": 2.5,
  *	"stock": 3
- * } 
+ * } ]
  */
 
 /**
- * @api {POST} /create-pokemons Create pokemons
+ * @api {POST} /pokemon Create pokemons
  * @apiGroup Pokemon
  * @apiversion 1.0.0
  * @apiParam {string{1..255}} name
@@ -43,7 +43,7 @@
  */
 
 /**
- * @api {PUT} /buy-pokemons Buy pokemons
+ * @api {PUT} /pokemon/buy Buy pokemons
  * @apiGroup Pokemon
  * @apiversion 1.0.0
  * @apiParam {string{1..255}} name

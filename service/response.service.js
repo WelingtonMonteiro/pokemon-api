@@ -28,5 +28,5 @@ function notAuthorized(res, response, status) {
 }
 
 function forbidden(res, reponse) {
-    res.status(status || 200403).send(reponse);
+    res.status(status || 403).send(reponse);
 }

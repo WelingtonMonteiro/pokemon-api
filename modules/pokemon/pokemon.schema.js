@@ -4,6 +4,7 @@
 
 var Sequelize = require('sequelize');
 
+
 var pokemonSchema = {
 	id: {
 		type: Sequelize.BIGINT,
@@ -25,5 +26,4 @@ var pokemonSchema = {
 			defaultValue: 1
 	}
 };
-
 module.exports = pokemonSchema;

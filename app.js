@@ -3,22 +3,23 @@
  */
 
 'use strict';
-var db = require('./bin/bin.sequelize.js')();
-var binMiddlewares = require('./bin/bin.middlewares');
-var binRoutes = require('./bin/bin.route.js');
-var binServer = require('./bin/bin.server.js');
+var db = require('./load/load.sequelize.js')();
+var loadMiddlewares = require('./load/load.middlewares');
+var loadRoutes = require('./load/load.route.js');
+var loadServer = require('./load/load.server.js');
 var express = require('express');
 var app = express();
 
 module.exports = app;
 
-binMiddlewares(app, onMiddleware);
+
+loadMiddlewares(app, onMiddleware);
 
 
 function onMiddleware() {
-	binRoutes(app, onRoutes);
+	loadRoutes(app, onRoutes);
 }
 
 function onRoutes() {
-	binServer(app, db);
+	loadServer(app, db);
 }

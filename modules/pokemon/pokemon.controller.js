@@ -37,13 +37,14 @@ function create(req, res) {
 	if (!newPokemon) return responseService.error(res, {error: 'Object pokemon is required!'});
 	if (!newPokemon.name) return responseService.error(res, {error: 'name pokemon is required!'});
 	if (!newPokemon.price) return responseService.error(res, {error: 'price pokemon is required!'});
+	if (newPokemon.price < 0) return responseService.error(res, {error: 'price pokemon greated zero!'});
 	if (!newPokemon.stock) return responseService.error(res, {error: 'stock pokemon is required!'});
 
 
 	PokemonModel.create(newPokemon)
 		.then(sendPokemon);
 
-	function sendPokemon(pokemon) {
+	function sendPokemon(pokemon) {		
 		responseService.success(res, pokemon)
 	}
 }
@@ -59,6 +60,7 @@ function buy(req, res) {
 	if (!newPokemon) return responseService.error(res, {error: 'Object pokemon is required!'});
 	if (!newPokemon.name) return responseService.error(res, {error: 'name pokemon is required!'});
 	if (!newPokemon.quantity) return responseService.error(res, {error: 'quantity pokemon is required!'});
+	if (newPokemon.quantity < 0 ) return responseService.error(res, {error: 'quantity pokemon greated 0!'});
 
 	var query = {
 		where: {
@@ -68,31 +70,33 @@ function buy(req, res) {
 
 
 	PokemonModel.findOne(query)
-		.then(
-			function (pokemon) {
-				if (!pokemon)return responseService.error(res, {error: "pokemon name '" + newPokemon.name + "' not found!"});
+		.then(onSuccess).catch(onError);
 
-				if (pokemon && pokemon.stock < newPokemon.quantity) {
-					return responseService.error(res, {error: 'Not enought ' + pokemon.name + ' in stock: ' + pokemon.stock}, 400)
-				}
+	function onSuccess(pokemon) {
+		if (!pokemon)return responseService.error(res, {error: "pokemon name '" + newPokemon.name + "' not found!"});
 
-				apiService.post(pokemon, newPokemon, onSuccess, onError);
+		if (pokemon && pokemon.stock < newPokemon.quantity) {
+			return responseService.error(res, {error: 'Not enought ' + pokemon.name + ' in stock: ' + pokemon.stock}, 400)
+		}
 
-				function onSuccess(body) {
-					if (body.status === 'paid') {
+		apiService.post(pokemon, newPokemon, onSuccessApi, onError);
 
-						pokemon.stock = pokemon.stock - newPokemon.quantity;
-						pokemon.save()
-							.then(function (data) {
-								responseService.success(res, body);
-							})
-					}
-				}
+		function onSuccessApi(body) {
+			if (body.status === 'paid') {
 
-				function onError(err) {
-					return responseService.error(res, {error: err.response.body}, err.response.statusCode);
-				}
+				pokemon.stock = pokemon.stock - newPokemon.quantity;
+				pokemon.save()
+					.then(function (data) {
+						responseService.success(res, body);
+					})
+					.catch(onError)
+			}
+		}
 
-			})
+	}
+	
+	function onError(err) {
+		return responseService.error(res, {error: err.response.body}, err.response.statusCode);
+	}
 
 }

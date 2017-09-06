@@ -3,12 +3,12 @@
  */
 
 'use strict';
-module.exports = binServer;
+module.exports = loadServer;
 
 var http = require('http');
 var port = '';
 
-function binServer(app, db) {
+function loadServer(app, db) {
 	port = app.get('port');
 	db.conn.sync().done(onSync);
 

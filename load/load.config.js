@@ -9,12 +9,12 @@ module.exports = {
 function envDev(){
 	return {
 		database: "pokemons-dev",
-		username: "",
-		password: "",
+		username: "entendeu",
+		password: "entendeu",
 		params: {
 			host: "127.0.0.1",
-			dialect: "sqlite",
-			// dialect: "mysql",
+			// dialect: "sqlite",
+			dialect: "mysql",
 			port: 3306,
 			storage: "../pokemons-dev.sqlite",
 			pool: {

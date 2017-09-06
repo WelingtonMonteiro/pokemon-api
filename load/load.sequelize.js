@@ -3,7 +3,7 @@
  */
 
 var env = process.env.NODE_ENV || 'dev';
-var Config = require('./bin.config')[env];
+var Config = require('./load.config')[env];
 
 module.exports = AppSequelize;
 

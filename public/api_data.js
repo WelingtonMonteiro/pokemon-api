@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "GET",
-    "url": "/get-pokemons",
+    "url": "/pokemons",
     "title": "Get All Pokemons",
     "group": "Pokemon",
     "version": "1.0.0",
@@ -9,18 +9,18 @@ define({ "api": [
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n{\n\t\"id\": \"1\",\n\t\"name\": \"pikachu\",\n\t\"price\": 2.5,\n\t\"stock\": 3\n}",
+          "content": "HTTP/1.1 200 OK\n[{\n\t\"id\": \"1\",\n\t\"name\": \"pikachu\",\n\t\"price\": 2.5,\n\t\"stock\": 3\n} ]",
           "type": "json"
         }
       ]
     },
     "filename": "./modules/pokemon/pokemon.doc.js",
     "groupTitle": "Pokemon",
-    "name": "GetGetPokemons"
+    "name": "GetPokemons"
   },
   {
     "type": "POST",
-    "url": "/create-pokemons",
+    "url": "/pokemon",
     "title": "Create pokemons",
     "group": "Pokemon",
     "version": "1.0.0",
@@ -70,11 +70,11 @@ define({ "api": [
     },
     "filename": "./modules/pokemon/pokemon.doc.js",
     "groupTitle": "Pokemon",
-    "name": "PostCreatePokemons"
+    "name": "PostPokemon"
   },
   {
     "type": "PUT",
-    "url": "/buy-pokemons",
+    "url": "/pokemon/buy",
     "title": "Buy pokemons",
     "group": "Pokemon",
     "version": "1.0.0",
@@ -150,6 +150,6 @@ define({ "api": [
     },
     "filename": "./modules/pokemon/pokemon.doc.js",
     "groupTitle": "Pokemon",
-    "name": "PutBuyPokemons"
+    "name": "PutPokemonBuy"
   }
 ] });

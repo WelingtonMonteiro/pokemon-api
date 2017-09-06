@@ -8,13 +8,12 @@ var express = require('express');
 var morgan = require('morgan');
 var helmet = require('helmet');
 var compression = require('compression');
-var logger  = require('./bin.logger');
+var logger  = require('./load.logger');
 
 module.exports = binMiddleware;
 
 function binMiddleware(app, done) {
 	var PORT = process.env.PORT || 3000;
-	var env = process.env.NODE_ENV = 'dev';
 
 	app.set('port', PORT);
 	app.set('json spaces', 4);	

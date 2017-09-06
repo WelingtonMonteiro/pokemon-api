@@ -7,7 +7,7 @@ var express = require('express');
 var PokemonController = require('./pokemon.controller');
 
 module.exports = function (app) {
-	app.get('/get-pokemons', PokemonController.get);
-	app.post('/create-pokemons', PokemonController.create);
-	app.put('/buy-pokemons', PokemonController.buy);
+	app.get('/pokemon', PokemonController.get);
+	app.post('/pokemon', PokemonController.create);
+	app.put('/pokemon/buy', PokemonController.buy);
 }
